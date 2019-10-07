@@ -248,7 +248,7 @@ use this last snippet of code *as* the subfunction.)
 *   [Equipage][], the "purely concatenative" language that
     Carriage might've been, had the author not been so concerned about quoting at the time.
 *   [Wagon][], yet another "purely concatenative" language by the same author, trying to
-    capture control flow in being "second-order concatenative", and not quite succeeding.
+    capture control flow by being "second-order concatenative", and not quite succeeding.
 
 [Aubergine]: https://catseye.tc/node/Aubergine
 [Cfluviurrh]: https://catseye.tc/node/Cfluviurrh
