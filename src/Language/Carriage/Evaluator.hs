@@ -24,6 +24,7 @@ slice p k s = slice' p (reverse s)
         slice' n (_:s) = slice' (n-1) s
 
 ci " " = id
+ci "\n" = id
 ci "1" = \s -> push s $ Int 1
 ci "$" = snd . pop
 ci "#" = \s -> push s $ Int $ fromIntegral $ length s
