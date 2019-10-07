@@ -10,9 +10,5 @@ examplePrograms = [
     {
         "contents": "111-~+\n",
         "filename": "trivial.carriage"
-    },
-    {
-        "contents": "111-@1\\11-~!$$11+1+1+1+\\1+1+1+1+1+1+@11-~!$$1-\n",
-        "filename": "truth-machine.carriage"
     }
 ];
