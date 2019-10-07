@@ -90,38 +90,49 @@ If the stack is empty any time an attempt is made to pop something off of it, th
 
 ### Examples
 
+    -> Tests for functionality "Evaluate Carriage Program"
+
+    -> Functionality "Evaluate Carriage Program" is implemented by
+    -> shell command "bin/carriage run %(test-body-file)"
+
 #### Basic Stack Manipulation
 
 As a simple example, the Carriage program
 
-   111-~+
+    111-~+
 
 will be turned into a function which we might spell out in, say, Erlang, as
 
-   fun(S) -> add(pick(sub(one(one(one(S))))))
+    fun(S) -> add(pick(sub(one(one(one(S))))))
 
 which will be applied to a stack
 
-   (fun(S) -> add(pick(sub(one(one(one(S)))))))(["1","1","1","-","~","+"])
+    (fun(S) -> add(pick(sub(one(one(one(S)))))))(["1","1","1","-","~","+"])
 
 which could be stated more succinctly as
 
-   add(pick(sub(one(one(one(["1","1","1","-","~","+"]))))))
+    add(pick(sub(one(one(one(["1","1","1","-","~","+"]))))))
 
 and whose evaluation could be depicted as
 
-   add(pick(sub(one(one(["1","1","1","-","~","+",1])))))
-   add(pick(sub(one(["1","1","1","-","~","+",1,1]))))
-   add(pick(sub(["1","1","1","-","~","+",1,1,1])))
-   add(pick(["1","1","1","-","~","+",1,0]))
-   add(["1","1","1","-","~","+",1,1])
+    add(pick(sub(one(one(["1","1","1","-","~","+",1])))))
+    add(pick(sub(one(["1","1","1","-","~","+",1,1]))))
+    add(pick(sub(["1","1","1","-","~","+",1,1,1])))
+    add(pick(["1","1","1","-","~","+",1,0]))
+    add(["1","1","1","-","~","+",1,1])
 
 finally evaluating to the result stack
 
-   ["1","1","1","-","~","+",2]
+    ["1","1","1","-","~","+",2]
 
 (Note that stacks are being depicted bottom-to-top.  I realize that's not how you'd typically
 implement them as lists in a functional language.  Please just ignore that detail.)
+
+And here is our Falderal test for confirming that implementations
+get this result from evaluating this program:
+
+    111-~+
+    ===> ["1","1","1","-","~","+",2]
 
 #### Function Creation and Application
 
@@ -152,6 +163,12 @@ this function onto the stack, which now looks like this:
 Finally, the apply instruction pops the function, and applies it to the
 stack: the 2 is popped, 1 is added to it, and the result, 3, is pushed
 back on.
+
+And here is our Falderal test for confirming that implementations
+get this result from evaluating this program:
+
+    11+$11+111+@!
+    ===> ["1","1","+","$","1","1","+","1","1","1","+","@","!",3]
 
 ##### Note on "slice"
 

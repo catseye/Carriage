@@ -12,7 +12,7 @@ main = do
     case args of
         ["run", fileName] -> do
             text <- readFile fileName
-            putStrLn $ show $ Evaluator.run text
+            putStrLn $ show $ reverse $ Evaluator.run text
             return ()
         _ -> do
             abortWith "Usage: carriage run <carriage-program-text-filename>"

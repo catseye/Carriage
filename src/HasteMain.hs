@@ -11,4 +11,4 @@ main = withElems ["prog", "result", "run-button"] driver
 driver [progElem, resultElem, runButtonElem] =
     onEvent runButtonElem Click $ \_ -> do
         Just prog <- getValue progElem
-        setProp resultElem "textContent" $ show $ Evaluator.run prog
+        setProp resultElem "textContent" $ show $ reverse $ Evaluator.run prog

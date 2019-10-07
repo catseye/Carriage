@@ -8,7 +8,7 @@ data Elem = Int Integer
 instance Show Elem where
     show (Int i) = show i
     show (Fn _)  = "<fn>"
-    show (Sym c) = show c
+    show (Sym c) = show [c]
  
 pop (e:s) = (e, s)
 push s e = (e:s)
