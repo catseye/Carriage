@@ -232,7 +232,10 @@ Push our subfunction (slice at position 5 with length 5) onto the stack.
 
     11-~!
 
-Duplicate object on the stack and apply it.  This applies our subfunction, with our subfunction already on the stack; so the subfunction will duplicate it, then apply its copy, ad infinitum.  (A cleverer implementation might be able to use this last snippet of code ''as'' the subfunction.)
+Duplicate object on the stack and apply it.  This applies our subfunction, with
+our subfunction already on the stack; so the subfunction will duplicate it,
+then apply its copy, ad infinitum.  (A cleverer implementation might be able to
+use this last snippet of code *as* the subfunction.)
 
 ### See also
 
