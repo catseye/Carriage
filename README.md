@@ -80,7 +80,7 @@ functions which take stacks to stacks.
 
 * `~` ("pick") pops an integer n off the stack, then copies the element which is n (zero-based) positions deep in the stack, and pushes that copy onto the stack.  If n is negative or greater than the size of the stack or not an integer, the program explodes.  If the element to be copied is an instruction symbol, the program explodes.
 
-* `\\` ("swap") pops an element a off the stack, then pops an element b off the stack, then pushes a back onto the stack, then pushes b back onto the stack.
+* `\` ("swap") pops an element a off the stack, then pops an element b off the stack, then pushes a back onto the stack, then pushes b back onto the stack.
 
 * `$` ("pop") pops an element off the stack and discards it.
 
